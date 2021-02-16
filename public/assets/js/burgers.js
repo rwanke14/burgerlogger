@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const devoured = e.target.getAttribute('data-devoured');
 
         const burgerEaten = {
+          id: id,
           devoured: devoured,
         };
 
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(`Deleted burger: ${id}`);
 
         // Reload the page
-        // location.reload();
+        location.reload();
       });
     });
   });

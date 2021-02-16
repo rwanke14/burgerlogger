@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           eat: devoured,
         };
 
-        fetch(`/api/cats/${id}`, {
+        fetch(`/api/burgers/${id}`, {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           // Check that the response is all good
           // Reload the page so the user can see the new quote
           if (response.ok) {
-            console.log(`changed sleep to: ${burgerEaten}`);
+            console.log(`changed burger to: ${burgerEaten}`);
             location.reload('/');
           } else {
             alert('something went wrong!');
@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
         buger_name: document.getElementById('burger').value.trim(),
-        devoured: document.getElementById('eat').checked,
+        devoured: document.getElementById('devoured').checked,
       };
 
       // Send POST request to create a new quote
-      fetch('/api/burger', {
+      fetch('/api/burgers', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const id = e.target.getAttribute('data-id');
 
       // Send the delete request
-      fetch(`/api/burger/${id}`, {
+      fetch(`/api/burgers/${id}`, {
         method: 'DELETE',
       }).then((res) => {
         console.log(res);

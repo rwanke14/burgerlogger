@@ -81,7 +81,7 @@ const orm = {
             if (err) {
                 throw err;
             }
-            cb(results);
+            cb(result);
         })
 
 

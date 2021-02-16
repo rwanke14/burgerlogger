@@ -12,6 +12,10 @@ const burger = {
 
     updateOne(objColVals, condition, cb){
         orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
+    },
+
+    deleteBurger(condition, cb) {
+        orm.delete('burgers', condition, (res) => cb(res));
     }
 
 }

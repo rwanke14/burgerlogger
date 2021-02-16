@@ -11,15 +11,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   if (changeBurgerBtns) {
     changeBurgerBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
+        console.log('click')
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute('data-id');
         const devoured = e.target.getAttribute('data-devoured');
 
         const burgerEaten = {
-          eat: devoured,
+          devoured: devoured,
         };
 
-        fetch(`/api/burgers/${id}`, {
+        fetch(`/api/burger/${id}`, {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -51,12 +52,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
-        buger_name: document.getElementById('burger').value.trim(),
-        devoured: document.getElementById('devoured').checked,
+        burger_name: document.getElementById('burger').value.trim(),
+        
       };
 
       // Send POST request to create a new quote
-      fetch('/api/burgers', {
+      fetch('/api/burger', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -70,29 +71,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('burger').value = '';
 
         // Reload the page so the user can see the new quote
-        console.log('Created a new cat!');
+        console.log('Created a new burger!');
         location.reload();
       });
     });
   }
 
   // DELETE
-  const deleteBurger = document.querySelectorAll('.delete-burger');
+  const deleteBurgerBtn = document.querySelectorAll('.delete-burger');
 
   // Set up the event listeners for each delete button
-  deleteBurger.forEach((button) => {
+  deleteBurgerBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
-
+      console.log(id)
       // Send the delete request
-      fetch(`/api/burgers/${id}`, {
+      fetch(`/api/burger/${id}`, {
         method: 'DELETE',
       }).then((res) => {
         console.log(res);
         console.log(`Deleted burger: ${id}`);
 
         // Reload the page
-        location.reload();
+        // location.reload();
       });
     });
   });

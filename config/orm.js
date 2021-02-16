@@ -1,5 +1,4 @@
 
-const { query } = require('./connection.js');
 const connection = require('./connection.js');
 
 
@@ -61,7 +60,7 @@ const orm = {
 
         connection.query(queryString, vals, (err, result) => {
 
-            if(err){
+            if (err) {
                 throw err;
             }
             cb(result);
@@ -70,7 +69,7 @@ const orm = {
     },
 
 
-    updateOne(table, objColVals, condition, cb){
+    updateOne(table, objColVals, condition, cb) {
         let queryString = `UPDATE ${table}`
         queryString += ' SET ';
         queryString += objToSql(objColVals);
@@ -78,16 +77,30 @@ const orm = {
         queryString += condition;
 
         console.log(queryString)
-        connection.query(queryString, (err,result) => {
-            if (err){
+        connection.query(queryString, (err, result) => {
+            if (err) {
                 throw err;
             }
             cb(results);
         })
+
+
+    },
+
+
+    deleteBurger(table, condition, cb) {
+        let queryString = `DELETE FROM ${table}`;
+        queryString += ' WHERE ';
+        queryString += condition;
+
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
     }
-
-
-
 
 
 

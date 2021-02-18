@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const devoured = e.target.getAttribute('data-devoured');
 
         const burgerEaten = {
-          id: id,
           devoured: devoured,
         };
 

@@ -1,7 +1,74 @@
+
+
+.orders{
+    background-image: url(../images/chalkboard2.jpg);
+    background-repeat: repeat;
+    background-position: cover;
+    padding-bottom: 15%;
+    padding-top: 10%;
+}
+
+h1 {
+    font-family: 'Risque', cursive;
+    text-align: center;
+    color: rgb(1, 83, 83);
+}
+
+h2 {
+    margin-top: 2%;
+    padding: .5%;
+    font-size: x-large;
+    font-family: 'Risque', cursive;
+
+}
+
+.addback{
+    color: rgb(0, 68, 68);
+}
+
+.btn {
+    color: white;
+    background-color: teal;
+
+}
+
+
+.add-burg {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#add-burger {
+
+    padding-left: 10%;
+    padding-bottom: 5%;
+    background-image: url(../images/buncover.png);
+    background-size: cover;
+    color: rgb(1, 83, 83);
+}
+
+form {
+    padding-top: 2%;
+}
+
+
+.title {
+    font-size: xx-large;
+    font-family: 'Risque', cursive;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
 li {
     padding: 5px;
-    margin: 5px;
-    background: #faebd7;
+    padding-left: 20px;
+    margin: 4px;
+    background-color: #FBCCD1;
+    font-family: 'Roboto', sans-serif;
+   color: #522c35;
+   font-size: large;
+    
   }
   
   .label {
@@ -16,4 +83,13 @@ li {
   
   .form-group {
     margin-bottom: 5px;
+    background-color:teal;
+    color: whitesmoke;
+  }
+
+
+  #bun {
+      background-image: url(../images/buncover.png);
+      background-size: cover;
+      padding: 5%;
   }

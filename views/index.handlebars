@@ -1,3 +1,6 @@
+
+{{!-- Pulling together the lists for each column that shows the not eaten vs. eaten burgers along with their buttons. --}}
+
 <div class="card" id="bun">
   <div class="card-body">
     <h1>Delicious Hamburgers</h1>
@@ -9,6 +12,7 @@
     <div class="col-6">
       <h2 class="title">Pick a hamburger to eat.</h2>
 
+    {{!-- Sets up not eaten list and bulls in burger-block file. --}}
       <ul>
         {{#each burger}}
         {{#unless devoured}}
@@ -21,6 +25,7 @@
     <div class="col-6">
       <h2 class="title">Burgers that have been eaten.</h2>
 
+      {{!-- Sets up burgers that have been eaten list and brings in burger2-block file. --}}
       <ul>
         {{#each burger}}
         {{#if devoured}}
@@ -32,6 +37,7 @@
   </div>
 </div>
 
+{{!-- Sets up the form for adding a burger at the bottom of the page.  --}}
 <div class="card" id="add-burger">
 
   <h2 class="addback">Add a Burger</h2>

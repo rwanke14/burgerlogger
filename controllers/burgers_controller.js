@@ -5,7 +5,7 @@ const burger = require ('../models/burger.js');
 
 
 
-
+//route set up to read the home page and display for user.
 router.get('/', (req, res) => {
     burger.selectAll((data) => {
         const hbsObject = {
@@ -18,13 +18,12 @@ router.get('/', (req, res) => {
     
 });
 
-
+//route to create new burgers on the front end when added. 
 router.post('/api/burger', (req, res) => {
     console.log(req.body.burger_name)
 
     burger.insertOne(['burger_name', 'devoured'], [req.body.burger_name, false], (result) => {
 
-        // res.json({id:result.insertId})
         console.log(result);
         res.redirect('/')
 
@@ -32,6 +31,7 @@ router.post('/api/burger', (req, res) => {
     
 });
 
+//route to update the burgers from not devoured to devoured.
 router.put('/api/burger/:id', (req, res) => {
 
     const condition = `id = ${req.params.id}`;
@@ -51,6 +51,7 @@ router.put('/api/burger/:id', (req, res) => {
     
 });
 
+//route to delete burgers when the remove button is clicked on the front end. 
 router.delete('/api/burger/:id', (req, res) => {
     const condition = `id = ${req.params.id}`;
     console.log(condition)
@@ -64,5 +65,5 @@ router.delete('/api/burger/:id', (req, res) => {
       
     });
   });
-
+//export this file.
 module.exports = router;
